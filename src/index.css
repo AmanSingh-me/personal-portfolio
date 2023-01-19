@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Poppins;
+  src: url(./assets//fonts/Poppins-Regular.ttf);
+}
+
+html{
+  scrollbar-width: none;
+}
+
+body {
+  background-color: #111418;
+  color: #fff;
+  font-family:  Poppins, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
