@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Education from "./pages/Education";
@@ -13,7 +14,7 @@ function App() {
     <div className="App md:flex h-screen">
       <BrowserRouter>
         {/* <Routes>
-          <Route path="/" element=""> </Route>
+          <Route path="/" element="<Home/>"> </Route>
           <Route path="/about" element={<About/>} > </Route>
           <Route path="/skills" element={<Skills/>}> </Route>
           <Route path="/mywork" element={<MyWork/>}> </Route>

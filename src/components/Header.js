@@ -2,29 +2,57 @@
 import ProfileImg from "../assets/images/avatar.svg";
 import NavBar from "./header/NavBar";
 import Hamburger_Svg from "../assets/images/hamburger.svg";
+import Close_Svg from "../assets/images/close.svg";
+
 import SocialLinks from "./header/SocialLinks";
+import { useState } from "react";
 
 
 
 export default function Header() {
+
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [navPosition, setNavPosition] = useState("left-full");
+  const [socialLinks_Position, setSocialLinks_Position] = useState("right-full");
+
+  const handleToggle = (event) => {
+
+    if(isNavOpen){
+      event.target.src = Hamburger_Svg;
+      setNavPosition("left-full");
+      setSocialLinks_Position("right-full");
+      setIsNavOpen(false);
+    }
+    else{ 
+      event.target.src = Close_Svg;
+      setNavPosition("left-0");
+      setSocialLinks_Position("right-0");
+      setIsNavOpen(true);
+    }
+  }
+
   return (
-    <header className="md:w-1/4 lg:w-1/5 h-[10%] md:h-screen text-center py-2">
-      <div className="md:h-full flex md:flex-col justify-between items-center py-1 px-4" >
-        {/* profile section */}
-        <div className="">
-          <img src={ProfileImg} alt="profile" className="hidden md:block" />
-          <h1 className="hidden md:block text-2xl lg:text-3xl my-3">Aman Singh</h1>
-          <h1 className="md:hidden text-5xl" >A.S</h1>
-        </div>
-        {/* Navigation Menu */}
+    <header className="bg-light-black relative md:w-1/4 lg:w-1/5 h-[10vh] md:h-screen text-center py-2">
+      <div className="px-3 h-full flex md:flex-col justify-between items-center">
+
         <div>
-          <img className="w-8 md:hidden menu-closed" src={Hamburger_Svg} alt="Hamburger" />
+          <h1 className=" font-bold text-4xl sm:text-5xl md:hidden text-light-blue">A.S</h1>
+          <img src={ProfileImg} alt="Profile" className="hidden md:block" />
+          <p className="hidden md:block mt-4 text-2xl text-light-blue font-bold" >Aman Singh</p>
+        </div>
+
+        <img src={Hamburger_Svg} alt="Menu icon" className="w-8 md:hidden cursor-pointer" 
+        onClick={handleToggle} />
+
+        <div className={`bg-[#1B243095] md:bg-light-black px-4 transition-all duration-300 w-full 
+        absolute md:static top-full ${navPosition}`} >
           <NavBar/>
         </div>
-        {/* Social Links */}
-        <div className="hidden md:block" >
-            <SocialLinks/>
+
+        <div className={`bg-[#1B243060] md:bg-light-black px-2 transition-all duration-300 absolute md:static top-44 rotate-9 ${socialLinks_Position}`} >
+          <SocialLinks/>
         </div>
+
       </div>
     </header>
   );

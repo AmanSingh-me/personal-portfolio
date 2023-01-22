@@ -9,11 +9,11 @@
 
 html{
   scrollbar-width: none;
+  overflow: hidden;
 }
 
 body {
-  background-color: #111418;
-  color: #fff;
+  color: #EAFDFC;
   font-family:  Poppins, sans-serif;
   width: 100vw;
   height: 100vh;

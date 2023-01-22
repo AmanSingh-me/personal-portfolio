@@ -2,18 +2,22 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="hidden md:block" >
-        <ul className="flex md:block text-center" >
-            <li className="my-4 hover:text-green" > <Link to="/" className="text-xl" >Home</Link> </li> 
-            <li className="my-4 hover:text-green" > <Link to="/about" className="text-xl" >About</Link> 
-            </li> 
-            <li className="my-4 hover:text-green" > <Link to="/skills" className="text-xl" >Skills</Link> 
-            </li> 
-            <li className="my-4 hover:text-green" > <Link to="/mywork" className="text-xl" >My Work</Link> </li> 
-            <li className="my-4 hover:text-green" > <Link to="/education" className="text-xl" >Education
-            </Link> </li>
-            <li className="my-4 hover:text-green" > <Link to="/blogs" className="text-xl" >Blogs</Link> 
-            </li> 
+    <nav>
+        <ul className="text-left md:text-center" >
+        {
+          [
+            { name: "Home", li_Style: "my-4", path: "/", link_Style: "text-xl hover:text-green" },
+            { name: "About", li_Style: "my-4", path: "/about", link_Style: "text-xl hover:text-green" },
+            { name: "Skills", li_Style: "my-4", path: "/skills", link_Style: "text-xl hover:text-green" },
+            { name: "My Work", li_Style: "my-4", path: "/mywork", link_Style: "text-xl hover:text-green" },
+            { name: "Education", li_Style: "my-4", path: "/education", link_Style: "text-xl hover:text-green" },
+            { name: "Blogs", li_Style: "my-4", path: "/blogs", link_Style: "text-xl hover:text-green" }
+          ].map(
+            (details, index) => <li className={details.li_Style} key={index} >
+                                <Link to={details.path} className={details.link_Style}>{details.name}</Link>
+                                </li>
+               )
+        }
         </ul>
     </nav>
   )
