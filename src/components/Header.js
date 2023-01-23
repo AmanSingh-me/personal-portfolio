@@ -44,12 +44,11 @@ export default function Header() {
         <img src={Hamburger_Svg} alt="Menu icon" className="w-8 md:hidden cursor-pointer" 
         onClick={handleToggle} />
 
-        <div className={`bg-[#1B243095] md:bg-light-black px-4 transition-all duration-300 w-full 
-        absolute md:static top-full ${navPosition}`} >
+        <div className={`bg-light-grey opacity-95 md:bg-light-black border-b-2 border-light-blue md:border-0 px-4 transition-all duration-300 w-full absolute md:static top-full z-10 ${navPosition}`} >
           <NavBar/>
         </div>
 
-        <div className={`bg-[#1B243060] md:bg-light-black px-2 transition-all duration-300 absolute md:static top-44 rotate-9 ${socialLinks_Position}`} >
+        <div className={`bg-[#243e5c95] md:bg-light-black px-2 transition-all duration-300 absolute md:static top-44 rotate-9 z-10 ${socialLinks_Position}`} >
           <SocialLinks/>
         </div>
 
