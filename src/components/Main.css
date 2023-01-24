@@ -1,0 +1,14 @@
+main{
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar{
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #03C988;
+}
+::-webkit-scrollbar-button{
+    background: #000000;
+}
