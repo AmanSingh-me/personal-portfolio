@@ -48,7 +48,7 @@ export default function Header() {
           <NavBar/>
         </div>
 
-        <div className={`bg-[#243e5c95] md:bg-light-black px-2 transition-all duration-300 absolute md:static top-44 rotate-9 z-10 ${socialLinks_Position}`} >
+        <div className={`bg-light-grey-500 md:bg-light-black px-2 transition-all duration-300 absolute md:static top-44 rotate-9 z-10 ${socialLinks_Position}`} >
           <SocialLinks/>
         </div>
 
