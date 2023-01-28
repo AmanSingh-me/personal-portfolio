@@ -19,7 +19,5 @@ body {
   height: 100vh;
   margin: 0;
   scrollbar-width: none;
-  -moz-scrollbar-width: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
